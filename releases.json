@@ -1,10 +1,10 @@
 [
-    {
-        "version": "1.0.0",
-        "downloadUrl": "https://github.com/marionnewlevant/craft-twig_perversion/archive/v1.0.0.zip",
-        "date": "2016-04-17T20:37:12.921Z",
-        "notes": [
-            "[Added] Initial release, with break, continue, and return"
-        ]
-    }
+  {
+    "version": "1.0.0",
+    "downloadUrl": "https://github.com/marionnewlevant/craft-twig_perversion/archive/v1.0.0.zip",
+    "date": "2016-04-17T20:37:12.921Z",
+    "notes": [
+      "[Added] Initial release, with break, continue, and return"
+    ]
+  }
 ]
