@@ -11,10 +11,6 @@ To install MN Twig Perversion, follow these steps:
 
 MN Twig Perversion works on Craft 2.4.x, Craft 2.5.x, Craft 2.6.x, and probably earlier versions as well.
 
-## MN Twig Perversion Overview
-
--Insert text here-
-
 ## Using MN Twig Perversion
 
 `{% break %}` to exit a for loop:
