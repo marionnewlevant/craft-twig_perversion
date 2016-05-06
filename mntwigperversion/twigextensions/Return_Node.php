@@ -25,7 +25,7 @@ class Return_Node extends \Twig_Node
     {
         $compiler
             ->addDebugInfo($this)
-            ->write('ob_end_clean();\n')
+            ->write("ob_end_clean();\n")
             ->write('return ')
             ->subcompile($this->getNode('expr'))
             ->raw(";\n")
