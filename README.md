@@ -74,6 +74,10 @@ The test will return false for hexadecimal strings as this will be the default b
 
 ### 1.0.1 -- 2016.05.06
 
-* Added `numeric` test, fixed parse error in `{% return %}
+* Added `numeric` test, fixed parse error in `{% return %}`
+
+### 1.0.2 -- 2016.06.17
+
+* Fixed loop bug in `{% continue %}`
 
 Brought to you by [Marion Newlevant](http://marion.newlevant.com)

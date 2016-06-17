@@ -13,23 +13,27 @@ namespace Craft;
 
 class Continue_Node extends \Twig_Node
 {
-    /**
-     * Compiles a Continue_Node into PHP.
-     */
-    public function compile(\Twig_Compiler $compiler)
-    {
-        $compiler
-            ->addDebugInfo($this)
-            ->write("++\$context['loop']['index0'];\n")
-            ->write("++\$context['loop']['index'];\n")
-            ->write("\$context['loop']['first'] = false;\n")
-            ->write("if (isset(\$context['loop']['length'])) {\n")
-            ->indent()
-            ->write("--\$context['loop']['revindex0'];\n")
-            ->write("--\$context['loop']['revindex'];\n")
-            ->write("\$context['loop']['last'] = 0 === \$context['loop']['revindex0'];\n")
-            ->outdent()
-            ->write("}\n")
-            ->write("continue;\n");
-    }
+		/**
+		 * Compiles a Continue_Node into PHP.
+		 */
+		public function compile(\Twig_Compiler $compiler)
+		{
+				$compiler
+						->addDebugInfo($this)
+						->write("if (array_key_exists('loop', \$context)) {\n")
+						->indent()
+							->write("++\$context['loop']['index0'];\n")
+							->write("++\$context['loop']['index'];\n")
+							->write("\$context['loop']['first'] = false;\n")
+							->write("if (isset(\$context['loop']['length'])) {\n")
+							->indent()
+								->write("--\$context['loop']['revindex0'];\n")
+								->write("--\$context['loop']['revindex'];\n")
+								->write("\$context['loop']['last'] = 0 === \$context['loop']['revindex0'];\n")
+							->outdent()
+							->write("}\n")
+						->outdent()
+						->write("}\n")
+						->write("continue;\n");
+		}
 }

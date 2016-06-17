@@ -15,5 +15,13 @@
       "[Added] Numeric Test (from https://github.com/GeckoPackages/GeckoTwig)",
       "[Fixed] Parse error on {% return %}"
     ]
+  },
+  {
+    "version": "1.0.2",
+    "downloadUrl": "https://github.com/marionnewlevant/craft-twig_perversion/archive/v1.0.2.zip",
+    "date": "2016-06-17T20:37:12.921Z",
+    "notes": [
+      "[Fixed] Loop bug in {% continue %}"
+    ]
   }
 ]
