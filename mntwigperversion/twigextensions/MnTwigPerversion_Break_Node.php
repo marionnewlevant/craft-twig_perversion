@@ -11,15 +11,15 @@ namespace Craft;
  * @link      https://github.com/marionnewlevant/craft-twig_perversion
  */
 
-class Break_Node extends \Twig_Node
+class MnTwigPerversion_Break_Node extends \Twig_Node
 {
-    /**
-    * Compiles a Break_Node into PHP.
-    */
-    public function compile(\Twig_Compiler $compiler)
-    {
-        $compiler
-            ->addDebugInfo($this)
-            ->write("break;\n");
-    }
+	/**
+	* Compiles a Break_Node into PHP.
+	*/
+	public function compile(\Twig_Compiler $compiler)
+	{
+		$compiler
+			->addDebugInfo($this)
+			->write("break;\n");
+	}
 }

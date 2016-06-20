@@ -23,5 +23,14 @@
     "notes": [
       "[Fixed] Loop bug in {% continue %}"
     ]
+  },
+  {
+    "version": "1.0.3",
+    "downloadUrl": "https://github.com/marionnewlevant/craft-twig_perversion/archive/v1.0.3.zip",
+    "date": "2016-06-20T20:37:12.921Z",
+    "notes": [
+      "[Added] {% return %} does not require a value to return",
+      "[Fixed] Renamed classes to prevent possible name conflicts"
+    ]
   }
 ]

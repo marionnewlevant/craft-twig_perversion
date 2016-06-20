@@ -14,39 +14,36 @@
 
 namespace Craft;
 
-require_once('Break_TokenParser.php');
-require_once('Continue_TokenParser.php');
-require_once('Return_TokenParser.php');
 /* NumericTest is lifted straight out of https://github.com/GeckoPackages/GeckoTwig
 */
 require_once('NumericTest.php');
 
 class MnTwigPerversionTwigExtension extends \Twig_Extension
 {
-    /**
-     * Returns the name of the extension.
-     *
-     * @return string The extension name
-     */
-    public function getName()
-    {
-        return 'MnTwigPerversion';
-    }
+	/**
+	 * Returns the name of the extension.
+	 *
+	 * @return string The extension name
+	 */
+	public function getName()
+	{
+		return 'MnTwigPerversion';
+	}
 
-    public function getTokenParsers()
-    {
-        return array(
-            new Break_TokenParser(),
-            new Continue_TokenParser(),
-            new Return_TokenParser(),
-        );
-    }
+	public function getTokenParsers()
+	{
+		return array(
+			new MnTwigPerversion_Break_TokenParser(),
+			new MnTwigPerversion_Continue_TokenParser(),
+			new MnTwigPerversion_Return_TokenParser(),
+		);
+	}
 
-    public function getTests()
-    {
-        return array(
-            new \GeckoPackages\Twig\Tests\NumericTest(),
-        );
-    }
+	public function getTests()
+	{
+		return array(
+			new \GeckoPackages\Twig\Tests\NumericTest(),
+		);
+	}
 
 }
