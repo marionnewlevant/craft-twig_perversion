@@ -68,7 +68,7 @@ class MnTwigPerversionPlugin extends BasePlugin
 	 */
 	public function getVersion()
 	{
-		return '1.0.3';
+		return '1.1.0';
 	}
 
 	/**
@@ -122,10 +122,13 @@ class MnTwigPerversionPlugin extends BasePlugin
 	public function addTwigExtension()
 	{
 		Craft::import('plugins.mntwigperversion.twigextensions.MnTwigPerversionTwigExtension');
+
 		Craft::import('plugins.mntwigperversion.twigextensions.MnTwigPerversion_Break_Node');
 		Craft::import('plugins.mntwigperversion.twigextensions.MnTwigPerversion_Break_TokenParser');
+
 		Craft::import('plugins.mntwigperversion.twigextensions.MnTwigPerversion_Continue_Node');
 		Craft::import('plugins.mntwigperversion.twigextensions.MnTwigPerversion_Continue_TokenParser');
+
 		Craft::import('plugins.mntwigperversion.twigextensions.MnTwigPerversion_Return_Node');
 		Craft::import('plugins.mntwigperversion.twigextensions.MnTwigPerversion_Return_TokenParser');
 		// Craft::import('plugins.mntwigperversion.twigextensions.NumericTest');

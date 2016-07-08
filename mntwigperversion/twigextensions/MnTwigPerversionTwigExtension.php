@@ -46,4 +46,13 @@ class MnTwigPerversionTwigExtension extends \Twig_Extension
 		);
 	}
 
+	public function getFilters() {
+		return array(
+		'json_decode' => new \Twig_Filter_Method($this, 'jsonDecode'),
+		);
+	}
+
+	public function jsonDecode($str) {
+		return json_decode($str, true); // return assoc arrays (more twig-like)
+	}
 }

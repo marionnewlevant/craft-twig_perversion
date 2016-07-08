@@ -4,6 +4,7 @@ Making twig do things it really shouldn&#39;t. Twig is not intended to be a gene
 
 - {% break %}, {% continue %}, and {% return %} tags
 - `is numeric` test
+- `json_decode` filter
 
 ## Installation
 
@@ -73,6 +74,10 @@ The test will return false for hexadecimal strings as this will be the default b
 
 ```
 
+### Filters
+- **json_decode**
+  Decode json string, returning php associative arrays. Uses the PHP [json_decode](http://php.net/manual/en/function.json-decode.php) function
+
 ## MN Twig Perversion Changelog
 
 ### 1.0.0 -- 2016.04.17
@@ -90,5 +95,9 @@ The test will return false for hexadecimal strings as this will be the default b
 ### 1.0.3 -- 2016.06.20
 
 * Possibility of `{% return %}` with no value
+
+### 1.1.0 -- 2016.07.08
+
+* Added json_decode
 
 Brought to you by [Marion Newlevant](http://marion.newlevant.com)
