@@ -40,5 +40,13 @@
     "notes": [
       "[Added] new filter json_decode"
     ]
+  },
+  {
+    "version": "1.2.0",
+    "downloadUrl": "https://github.com/marionnewlevant/craft-twig_perversion/archive/v1.2.0.zip",
+    "date": "2016-08-07T20:37:12.921Z",
+    "notes": [
+      "[Added] new filter date_from_string"
+    ]
   }
 ]

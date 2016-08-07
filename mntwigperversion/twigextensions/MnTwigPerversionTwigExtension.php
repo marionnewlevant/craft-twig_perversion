@@ -46,13 +46,26 @@ class MnTwigPerversionTwigExtension extends \Twig_Extension
 		);
 	}
 
-	public function getFilters() {
+	public function getFilters()
+	{
 		return array(
-		'json_decode' => new \Twig_Filter_Method($this, 'jsonDecode'),
+			'json_decode' => new \Twig_Filter_Method($this, 'jsonDecode'),
+			'date_from_string' => new \Twig_Filter_Method($this, 'dateFromString'),
 		);
 	}
 
-	public function jsonDecode($str) {
+	public function jsonDecode($str)
+	{
 		return json_decode($str, true); // return assoc arrays (more twig-like)
 	}
+
+	public function dateFromString($str)
+	{
+		$timezone = new \DateTimeZone(craft()->timezone);
+		$date = new \Craft\DateTime();
+		$date->setTimezone($timezone);
+		$date->setTimestamp(strtotime($str));
+		return $date;
+	}
+
 }

@@ -5,6 +5,7 @@ Making twig do things it really shouldn&#39;t. Twig is not intended to be a gene
 - {% break %}, {% continue %}, and {% return %} tags
 - `is numeric` test
 - `json_decode` filter
+- `date_from_string` filter
 
 ## Installation
 
@@ -78,6 +79,9 @@ The test will return false for hexadecimal strings as this will be the default b
 - **json_decode**
   Decode json string, returning php associative arrays. Uses the PHP [json_decode](http://php.net/manual/en/function.json-decode.php) function
 
+- **date_from_string**
+  Convert a string to a Craft [DateTime](https://craftcms.com/docs/templating/datetime) object. Uses [strtotime](http://php.net/strtotime) internally, can parse a wide variety of datetime descriptions.
+
 ## MN Twig Perversion Changelog
 
 ### 1.0.0 -- 2016.04.17
@@ -99,5 +103,9 @@ The test will return false for hexadecimal strings as this will be the default b
 ### 1.1.0 -- 2016.07.08
 
 * Added json_decode
+
+### 1.2.0 -- 2016.08.07
+
+* Added date_from_string
 
 Brought to you by [Marion Newlevant](http://marion.newlevant.com)
