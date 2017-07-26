@@ -48,5 +48,13 @@
     "notes": [
       "[Added] new filter date_from_string"
     ]
+  },
+  {
+    "version": "1.3.0",
+    "downloadUrl": "https://github.com/marionnewlevant/craft-twig_perversion/archive/v1.3.0.zip",
+    "date": "2017-07-26T20:37:12.921Z",
+    "notes": [
+      "[Added] new filter array_splice"
+    ]
   }
 ]
