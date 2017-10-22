@@ -1,29 +1,31 @@
 <?php
-namespace Craft;
+namespace marionnewlevant\twigperversion\twigextensions;
+
+use marionnewlevant\twigperversion\twigextensions\Break_Node;
 
 /**
- * MN Twig Perversion
+ * Twig Perversion
  *
- * @package   MnTwigPerversion
+ * @package   TwigPerversion
  * @author    Marion Newlevant
  * @copyright Copyright (c) 2014, Marion Newlevant
  * @license   MIT
  * @link      https://github.com/marionnewlevant/craft-twig_perversion
  */
 
-class MnTwigPerversion_Continue_TokenParser extends \Twig_TokenParser
+class Break_TokenParser extends \Twig_TokenParser
 {
 
 	public function parse(\Twig_Token $token)
 	{
 		$this->parser->getStream()->expect(\Twig_Token::BLOCK_END_TYPE);
 
-		return new MnTwigPerversion_Continue_Node(array(), array(), $token->getLine(), $this->getTag());
+		return new Break_Node(array(), array(), $token->getLine(), $this->getTag());
 	}
 
 	public function getTag()
 	{
-		return 'continue';
+		return 'break';
 	}
 
 }

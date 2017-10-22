@@ -1,0 +1,33 @@
+{
+  "name": "marionnewlevant/twig-perversion",
+  "description": "Making twig do things it really shouldn't",
+  "version": "1.0.0",
+  "type": "craft-plugin",
+  "keywords": [
+    "craft", "craftcms", "plugin", "twigperversion"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Marion Newlevant",
+      "homepage": "http://marion.newlevant.com"
+    }
+  ],
+  "require": {
+    "craftcms/cms": "~3.0.0-beta.20"
+  },
+  "autoload": {
+    "psr-4": {
+      "marionnewlevant\\twigperversion\\": "src/"
+    }
+  },
+  "extra": {
+    "handle": "twig-perversion",
+    "name": "Twig Perversion",
+    "schemaVersion": "1.0.0",
+    "hasSettings": false,
+    "hasCpSection": false,
+    "documentationUrl": "https://github.com/marionnewlevant/craft3-twig_perversion/blob/master/README.md",
+    "changelogUrl": "https://raw.githubusercontent.com/marionnewlevant/craft3-twig_perversion/master/CHANGELOG.md"
+  }
+}

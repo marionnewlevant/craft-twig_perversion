@@ -1,23 +1,17 @@
-# MN Twig Perversion plugin for Craft CMS
+# Twig Perversion plugin for Craft CMS
 
 Making twig do things it really shouldn&#39;t. Twig is not intended to be a general purpose programming language, and there are some things that really don't belong in the language. This plugin adds a few of those things anyway.
 
 - {% break %}, {% continue %}, and {% return %} tags
 - `is numeric` test
 - `json_decode` filter
-- `array_splice` filter
-- `date_from_string` filter
 
 ## Installation
 
-To install MN Twig Perversion, follow these steps:
-
-1. Download & unzip the file and place the `mntwigperversion` directory into your `craft/plugins` directory
+1. Install with Composer via `composer require marionnewlevant/twig-perversion` from your project directory
 2. Install plugin in the Craft Control Panel under Settings > Plugins
 
-MN Twig Perversion works on Craft 2.4.x, Craft 2.5.x, Craft 2.6.x, and probably earlier versions as well.
-
-## Using MN Twig Perversion
+## Using Twig Perversion
 
 ### Tags
 
@@ -56,10 +50,7 @@ A macro with a `{% return %}` tag will return whatever the return value is (whic
 
 ### Tests
 - **Numeric**
-  Test given value is numeric (behaviour like PHP 7 `is_numeric`).
-
-The test will return false for hexadecimal strings as this will be the default behaviour in PHP 7.
-(http://php.net/manual/en/function.is-numeric.php)
+  Test whether given value is numeric (behaviour like PHP 7 `is_numeric`). (Note that as of PHP 7, hexadecimal strings are not considered numeric)
 
 #### Examples
 
@@ -71,53 +62,13 @@ The test will return false for hexadecimal strings as this will be the default b
 {{ '-1.3' is numeric ? 'Yes' : 'No' }}
 {# Yes #}
 
-{{ '0x539' is not numeric ? 'Hex. is not numeric' : 'Numeric'}}
-{# Hex. is not numeric #}
+{{ '0x539' is numeric ? 'Yes' : 'No'}}
+{# No #}
 
 ```
 
 ### Filters
 - **json_decode**
-  Decode json string, returning php associative array. Uses the PHP [json_decode](http://php.net/manual/en/function.json-decode.php) function.
-
-- **array_splice**
-  Remove a portion of an array and replace it with something else. Uses the PHP [array_splice](http://php.net/manual/en/function.array-splice.php) function. Note that unlike the php function, this filter returns the modified array rather than the extracted elements. The original array is unchanged. Since the implementation requires copying the array, this will be less efficient than the raw php function. The **array_splice** filter is passed an `offset`, an optional `length`, and an optional `replacement`.
-
-- **date_from_string**
-  Convert a string to a Craft [DateTime](https://craftcms.com/docs/templating/datetime) object. Uses [strtotime](http://php.net/strtotime) internally, can parse a wide variety of datetime descriptions.
-
-## Issues
-
-Returning an array from a macro which is imported in one file, and then called in a child template fails (Array to string conversion). Doing this (importing in one file, calling in the child) is [deprecated](https://twig.symfony.com/doc/1.x/deprecated.html#macros) and will not be possible at all in Craft 3. The work-around is to import macros explicitly in each file that uses them.
-
-## MN Twig Perversion Changelog
-
-### 1.0.0 -- 2016.04.17
-
-* Initial release - tags {% break %}, {% continue %} and {% return %}
-
-### 1.0.1 -- 2016.05.06
-
-* Added `numeric` test, fixed parse error in `{% return %}`
-
-### 1.0.2 -- 2016.06.17
-
-* Fixed loop bug in `{% continue %}`
-
-### 1.0.3 -- 2016.06.20
-
-* Possibility of `{% return %}` with no value
-
-### 1.1.0 -- 2016.07.08
-
-* Added json_decode
-
-### 1.2.0 -- 2016.08.07
-
-* Added date_from_string
-
-### 1.3.0 -- 2017.07.26
-
-* Added array_splice
+  Decode json string, returning php associative arrays. Uses the PHP [json_decode](http://php.net/manual/en/function.json-decode.php) function
 
 Brought to you by [Marion Newlevant](http://marion.newlevant.com)

@@ -1,17 +1,17 @@
 <?php
-namespace Craft;
+namespace marionnewlevant\twigperversion\twigextensions;
 
 /**
- * MN Twig Perversion
+ * Twig Perversion
  *
- * @package   MnTwigPerversion
+ * @package   TwigPerversion
  * @author    Marion Newlevant
  * @copyright Copyright (c) 2014, Marion Newlevant
  * @license   MIT
  * @link      https://github.com/marionnewlevant/craft-twig_perversion
  */
 
-class MnTwigPerversion_Break_Node extends \Twig_Node
+class Break_Node extends \Twig_Node
 {
 	/**
 	* Compiles a Break_Node into PHP.

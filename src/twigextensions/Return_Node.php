@@ -1,17 +1,17 @@
 <?php
-namespace Craft;
+namespace marionnewlevant\twigperversion\twigextensions;
 
 /**
- * MN Twig Perversion
+ * Twig Perversion
  *
- * @package   MnTwigPerversion
+ * @package   TwigPerversion
  * @author    Marion Newlevant
  * @copyright Copyright (c) 2016, Marion Newlevant
  * @license   MIT
  * @link      https://github.com/marionnewlevant/craft-twig_perversion
  */
 
-class MnTwigPerversion_Return_Node extends \Twig_Node
+class Return_Node extends \Twig_Node
 {
 
 	/**
@@ -21,12 +21,12 @@ class MnTwigPerversion_Return_Node extends \Twig_Node
 	{
 		$compiler
 			->addDebugInfo($this)
-			->write("ob_end_clean();\n")
 			->write('return ');
+		// check for an expression to return.
 		if ($this->hasNode('expr')) {
 			$compiler->subcompile($this->getNode('expr'));
 		}
-		else
+		else // Return '' if there isn't one
 		{
 			$compiler->raw('""');
 		}
