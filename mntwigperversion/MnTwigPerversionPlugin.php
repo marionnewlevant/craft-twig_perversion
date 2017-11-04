@@ -58,7 +58,7 @@ class MnTwigPerversionPlugin extends BasePlugin
 	 */
 	public function getReleaseFeedUrl()
 	{
-		return 'https://raw.githubusercontent.com/marionnewlevant/craft-twig_perversion/master/releases.json';
+		return 'https://raw.githubusercontent.com/marionnewlevant/craft-twig_perversion/v1/releases.json';
 	}
 
 	/**
