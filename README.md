@@ -5,6 +5,7 @@ Making twig do things it really shouldn&#39;t. Twig is not intended to be a gene
 - {% break %}, {% continue %}, and {% return %} tags
 - `is numeric` test
 - `json_decode` filter
+- `array_splice` filter
 
 ## Installation
 
@@ -70,5 +71,8 @@ A macro with a `{% return %}` tag will return whatever the return value is (whic
 ### Filters
 - **json_decode**
   Decode json string, returning php associative arrays. Uses the PHP [json_decode](http://php.net/manual/en/function.json-decode.php) function
+
+- **array_splice**
+  Remove a portion of an array and replace it with something else. Uses the PHP [array_splice](http://php.net/manual/en/function.array-splice.php) function. Note that unlike the php function, this filter returns the modified array rather than the extracted elements. The original array is unchanged. Since the implementation requires copying the array, this will be less efficient than the raw php function. The **array_splice** filter is passed an `offset`, an optional `length`, and an optional `replacement`.
 
 Brought to you by [Marion Newlevant](http://marion.newlevant.com)

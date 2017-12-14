@@ -1,7 +1,7 @@
 {
   "name": "marionnewlevant/twig-perversion",
   "description": "Making twig do things it really shouldn't",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "type": "craft-plugin",
   "keywords": [
     "craft", "craftcms", "plugin", "twigperversion"
@@ -14,7 +14,7 @@
     }
   ],
   "require": {
-    "craftcms/cms": "~3.0.0-beta.20"
+    "craftcms/cms": "^3.0.0-RC1"
   },
   "autoload": {
     "psr-4": {
