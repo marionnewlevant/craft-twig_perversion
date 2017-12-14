@@ -56,7 +56,20 @@ class TwigPerversionTwigExtension extends \Twig_Extension
 		return [
 			new \Twig_Filter('json_decode', function($str) {
 				return json_decode($str, true); // return assoc arrays (more twig-like)
-			})
+			}),
+			
+			new \Twig_Filter('array_splice', function(array $input, int $offset, int $length = null, $replacement = null) {
+				if (is_null($length))
+				{
+					$length = count($input);
+				}
+				if (is_null($replacement))
+				{
+					$replacement = [];
+				}
+				$extracted = array_splice($input, $offset, $length, $replacement);
+				return $input;
+			}),
 		];
 	}
 
