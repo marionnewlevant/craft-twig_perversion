@@ -70,6 +70,11 @@ class TwigPerversionTwigExtension extends \Twig_Extension
 				$extracted = array_splice($input, $offset, $length, $replacement);
 				return $input;
 			}),
+
+			new \Twig_Filter('get_class', function($obj) {
+				return get_class($obj);
+			}),
+
 		];
 	}
 

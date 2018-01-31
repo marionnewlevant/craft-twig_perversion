@@ -1,5 +1,9 @@
 # Twig Perversion Changelog
 
+## 2.0.2 - 2018.01.31
+### Added
+* Added `get_class` filter
+
 ## 2.0.1 - 2017.12.13
 ### Added
 * Added `array_splice` filter
