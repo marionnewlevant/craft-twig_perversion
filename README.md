@@ -6,7 +6,7 @@ Making twig do things it really shouldn&#39;t. Twig is not intended to be a gene
 - `is numeric` test
 - `json_decode` filter
 - `array_splice` filter
-- `get_class` filter
+- `get_class` filter (deprecated, use Craft's [className()](https://github.com/craftcms/docs/blob/v3/en/templating/functions.md#classname-object-) function instead)
 
 ## Installation
 
