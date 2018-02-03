@@ -6,7 +6,6 @@ Making twig do things it really shouldn&#39;t. Twig is not intended to be a gene
 - `is numeric` test
 - `json_decode` filter
 - `array_splice` filter
-- `get_class` filter (deprecated, use Craft's [className()](https://github.com/craftcms/docs/blob/v3/en/templating/functions.md#classname-object-) function instead)
 
 ## Installation
 
@@ -79,8 +78,5 @@ A macro with a `{% return %}` tag will return whatever the return value is (whic
 
 - **array_splice**
   Remove a portion of an array and replace it with something else. Uses the PHP [array_splice](http://php.net/manual/en/function.array-splice.php) function. Note that unlike the php function, this filter returns the modified array rather than the extracted elements. The original array is unchanged. Since the implementation requires copying the array, this will be less efficient than the raw php function. The **array_splice** filter is passed an `offset`, an optional `length`, and an optional `replacement`.
-
-- **get_class**
-  Call PHP [get_class](http://php.net/manual/en/function.get-class.php) to return the class of an object as a string.
 
 Brought to you by [Marion Newlevant](http://marion.newlevant.com)

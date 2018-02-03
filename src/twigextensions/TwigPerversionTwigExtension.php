@@ -71,10 +71,6 @@ class TwigPerversionTwigExtension extends \Twig_Extension
 				return $input;
 			}),
 
-			new \Twig_Filter('get_class', function($obj) {
-				return get_class($obj);
-			}),
-
 		];
 	}
 
