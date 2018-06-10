@@ -57,7 +57,7 @@ class TwigPerversionTwigExtension extends \Twig_Extension
 			new \Twig_Filter('json_decode', function($str) {
 				return json_decode($str, true); // return assoc arrays (more twig-like)
 			}),
-			
+
 			new \Twig_Filter('array_splice', function(array $input, int $offset, int $length = null, $replacement = null) {
 				if (is_null($length))
 				{
@@ -71,7 +71,59 @@ class TwigPerversionTwigExtension extends \Twig_Extension
 				return $input;
 			}),
 
+			new \Twig_SimpleFilter('string', [$this, 'string']),
+			new \Twig_SimpleFilter('float',  [$this, 'float']),
+			new \Twig_SimpleFilter('int',    [$this, 'int']),
+			new \Twig_SimpleFilter('bool',   [$this, 'bool']),
+			new \Twig_SimpleFilter('s', [$this, 'string']),
+			new \Twig_SimpleFilter('f', [$this, 'float']),
+			new \Twig_SimpleFilter('i', [$this, 'int']),
+			new \Twig_SimpleFilter('b', [$this, 'bool']),
 		];
+	}
+
+	/**
+	 * Cast value as a string.
+	 *
+	 * @param mixed $subject Value to be cast.
+	 * @return string
+	 */
+	public function string($subject)
+	{
+		return (string) $subject;
+	}
+
+	/**
+	 * Cast value as a float.
+	 *
+	 * @param mixed $subject Value to be cast.
+	 * @return float
+	 */
+	public function float($subject)
+	{
+		return (float) $subject;
+	}
+
+	/**
+	 * Cast value as a integer.
+	 *
+	 * @param mixed $subject Value to be cast.
+	 * @return int
+	 */
+	public function int($subject)
+	{
+		return (int) $subject;
+	}
+
+	/**
+	 * Cast value as a boolean.
+	 *
+	 * @param mixed $subject Value to be cast.
+	 * @return bool
+	 */
+	public function bool($subject)
+	{
+		return (bool) $subject;
 	}
 
 }
