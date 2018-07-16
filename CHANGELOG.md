@@ -1,5 +1,9 @@
 # Twig Perversion Changelog
 
+## 2.0.4 - 2018.07.16
+### Added
+* Added `string`, `float`, `int`, and `bool` typecast filters.
+
 ## 2.0.3 - 2018.02.02
 ### Removed
 * Pull support for `get_class` quick before anyone uses it (use Craft's native `className` instead)

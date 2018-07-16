@@ -75,10 +75,6 @@ class TwigPerversionTwigExtension extends \Twig_Extension
 			new \Twig_SimpleFilter('float',  [$this, 'float']),
 			new \Twig_SimpleFilter('int',    [$this, 'int']),
 			new \Twig_SimpleFilter('bool',   [$this, 'bool']),
-			new \Twig_SimpleFilter('s', [$this, 'string']),
-			new \Twig_SimpleFilter('f', [$this, 'float']),
-			new \Twig_SimpleFilter('i', [$this, 'int']),
-			new \Twig_SimpleFilter('b', [$this, 'bool']),
 		];
 	}
 

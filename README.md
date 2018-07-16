@@ -6,10 +6,10 @@ Making twig do things it really shouldn&#39;t. Twig is not intended to be a gene
 - `is numeric` test
 - `json_decode` filter
 - `array_splice` filter
-- `string` and `s` filters
-- `float` and `f` filters
-- `int` and `i` filters
-- `bool` and `b` filters
+- `string` filter
+- `float` filter
+- `int` filter
+- `bool` filter
 
 ## Installation
 
@@ -86,19 +86,19 @@ A macro with a `{% return %}` tag will return whatever the return value is (whic
 
   Remove a portion of an array and replace it with something else. Uses the PHP [array_splice](http://php.net/manual/en/function.array-splice.php) function. Note that unlike the php function, this filter returns the modified array rather than the extracted elements. The original array is unchanged. Since the implementation requires copying the array, this will be less efficient than the raw php function. The **array_splice** filter is passed an `offset`, an optional `length`, and an optional `replacement`.
 
-- **string** or **s**
+- **string**
 
   Typecast variable as a string.
 
-- **float** or **f**
+- **float**
 
   Typecast variable as a float.
 
-- **int** or **i**
+- **int**
 
   Typecast variable as an integer.
 
-- **bool** or **b**
+- **bool**
 
   Typecast variable as a boolean.
 
