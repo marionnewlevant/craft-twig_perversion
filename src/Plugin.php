@@ -9,6 +9,6 @@ class Plugin extends \craft\base\Plugin
 
         // Custom initialization code goes here...
         // Add in our Twig extensions
-        \Craft::$app->view->twig->addExtension(new \marionnewlevant\twigperversion\twigextensions\TwigPerversionTwigExtension());
+        \Craft::$app->view->registerTwigExtension(new \marionnewlevant\twigperversion\twigextensions\TwigPerversionTwigExtension());
     }
 }
