@@ -78,6 +78,25 @@ class TwigPerversionTwigExtension extends \Twig_Extension
 		];
 	}
 
+	public function getOperators()
+	{
+		return [
+			[],
+			[
+				'===' => [
+					'precedence' => 20,
+					'class' => '\marionnewlevant\twigperversion\twigextensions\Expression_Binary_Equivalent',
+					'associativity' => \Twig_ExpressionParser::OPERATOR_LEFT,
+				],
+				'!==' => [
+					'precedence' => 20,
+					'class' => '\marionnewlevant\twigperversion\twigextensions\Expression_Binary_NotEquivalent',
+					'associativity' => \Twig_ExpressionParser::OPERATOR_LEFT,
+				],
+			],
+		];
+	}
+
 	/**
 	 * Cast value as a string.
 	 *

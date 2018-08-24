@@ -1,5 +1,9 @@
 # Twig Perversion Changelog
 
+## 2.0.5 - 2018.08.24
+### Added
+* Added `===`, and `!==` operators.
+
 ## 2.0.4 - 2018.07.16
 ### Added
 * Added `string`, `float`, `int`, and `bool` typecast filters.
