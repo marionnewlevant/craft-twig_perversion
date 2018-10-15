@@ -93,6 +93,11 @@ class TwigPerversionTwigExtension extends \Twig_Extension
 					'class' => '\marionnewlevant\twigperversion\twigextensions\Expression_Binary_NotEquivalent',
 					'associativity' => \Twig_ExpressionParser::OPERATOR_LEFT,
 				],
+				'<=>' => [
+					'precedence' => 20,
+					'class' => '\marionnewlevant\twigperversion\twigextensions\Expression_Binary_Spaceship',
+					'associativity' => \Twig_ExpressionParser::OPERATOR_LEFT,
+				],
 			],
 		];
 	}

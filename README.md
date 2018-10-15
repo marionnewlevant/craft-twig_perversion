@@ -3,7 +3,7 @@
 Making twig do things it really shouldn&#39;t. Twig is not intended to be a general purpose programming language, and there are some things that really don't belong in the language. This plugin adds a few of those things anyway.
 
 - `{% break %}`, `{% continue %}`, and `{% return %}` tags
-- `===` and `!==` operators
+- `===`, `!==`, and `<=>` operators
 - `is numeric` test
 - `json_decode` filter
 - `array_splice` filter
@@ -62,6 +62,10 @@ A macro with a `{% return %}` tag will return whatever the return value is (whic
 - **===** and **!==**
 
   Compares two values for equivalence, using php's `===` and `!==` operators.
+
+- **&lt;=&gt;**
+
+  Compares two values using php's [`<=>` (spaceship)](http://php.net/manual/en/migration70.new-features.php#migration70.new-features.spaceship-op) operator. Returns `-1`, `0`, or `1` when the first argument is respectively less than, equal to, or greater than the second.
 
 ### Tests
 - **Numeric**
