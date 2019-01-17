@@ -49,7 +49,7 @@ or
       {% return someValue %}
     {% endmacro %}
 
-`{% return %}` to return the empty string form a macro:
+`{% return %}` to return the empty string from a macro:
 
     {% macro foo() %}
       {# ... do stuff %}
