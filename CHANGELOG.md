@@ -1,5 +1,9 @@
 # Twig Perversion Changelog
 
+## 2.0.7 - 2019.02.02
+## Removed
+* Removed json_decode filter for craft version later than 3.1.6
+
 ## 2.0.6 - 2018.09.14
 ### Added
 * Added `<=>` operator. ([spaceship operator](http://php.net/manual/en/migration70.new-features.php#migration70.new-features.spaceship-op))

@@ -53,11 +53,7 @@ class TwigPerversionTwigExtension extends \Twig_Extension
 
 	public function getFilters()
 	{
-		return [
-			new \Twig_Filter('json_decode', function($str) {
-				return json_decode($str, true); // return assoc arrays (more twig-like)
-			}),
-
+		$filters = [
 			new \Twig_Filter('array_splice', function(array $input, int $offset, int $length = null, $replacement = null) {
 				if (is_null($length))
 				{
@@ -76,6 +72,15 @@ class TwigPerversionTwigExtension extends \Twig_Extension
 			new \Twig_SimpleFilter('int',    [$this, 'int']),
 			new \Twig_SimpleFilter('bool',   [$this, 'bool']),
 		];
+
+		// in Craft 3.1.6, craft added json_decode filter
+		if (version_compare(\Craft::$app->getInfo()->version, '3.1.6', '<'))
+		{
+			$filters[] = new \Twig_Filter('json_decode', function($str) {
+				return json_decode($str, true); // return assoc arrays (more twig-like)
+			});
+		}
+		return $filters;
 	}
 
 	public function getOperators()
