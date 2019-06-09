@@ -2,17 +2,13 @@
 /**
  * Twig Perversion plugin for Craft CMS 3.x
  *
- * Making twig do things it really shouldn&#39;t
+ * Making twig do things it really shouldn't
  *
  * @link      http://marion.newlevant.com
  * @copyright Copyright (c) 2017 Marion Newlevant
  */
 
 namespace marionnewlevant\twigperversion\twigextensions;
-
-use marionnewlevant\twigperversion\twigextensions\Break_TokenParser;
-use marionnewlevant\twigperversion\twigextensions\Continue_TokenParser;
-use marionnewlevant\twigperversion\twigextensions\Return_TokenParser;
 
 /**
  *
@@ -41,6 +37,7 @@ class TwigPerversionTwigExtension extends \Twig_Extension
 			new Break_TokenParser(),
 			new Continue_TokenParser(),
 			new Return_TokenParser(),
+			new While_TokenParser(),
 		];
 	}
 
@@ -48,12 +45,13 @@ class TwigPerversionTwigExtension extends \Twig_Extension
 	{
 		return [
 			new \Twig_Test('numeric', null, ['node_class' => '\marionnewlevant\twigperversion\twigextensions\Numeric_Test']),
+			new \Twig_Test('string', null, ['node_class' => '\marionnewlevant\twigperversion\twigextensions\String_Test']),
 		];
 	}
 
 	public function getFilters()
 	{
-		$filters = [
+		return [
 			new \Twig_Filter('array_splice', function(array $input, int $offset, int $length = null, $replacement = null) {
 				if (is_null($length))
 				{
@@ -72,15 +70,6 @@ class TwigPerversionTwigExtension extends \Twig_Extension
 			new \Twig_SimpleFilter('int',    [$this, 'int']),
 			new \Twig_SimpleFilter('bool',   [$this, 'bool']),
 		];
-
-		// in Craft 3.1.6, craft added json_decode filter
-		if (version_compare(\Craft::$app->getInfo()->version, '3.1.6', '<'))
-		{
-			$filters[] = new \Twig_Filter('json_decode', function($str) {
-				return json_decode($str, true); // return assoc arrays (more twig-like)
-			});
-		}
-		return $filters;
 	}
 
 	public function getOperators()
