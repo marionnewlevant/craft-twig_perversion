@@ -1,5 +1,9 @@
 # Twig Perversion Changelog
 
+## 2.2.0 - 2020.12.07
+### Added
+- Added `is array` test
+
 ## 2.1.0 - 2019.06.09
 ### Added
 - Added `{% while %}` loop.

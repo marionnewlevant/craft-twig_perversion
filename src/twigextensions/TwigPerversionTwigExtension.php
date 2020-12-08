@@ -46,6 +46,7 @@ class TwigPerversionTwigExtension extends \Twig_Extension
 		return [
 			new \Twig_Test('numeric', null, ['node_class' => '\marionnewlevant\twigperversion\twigextensions\Numeric_Test']),
 			new \Twig_Test('string', null, ['node_class' => '\marionnewlevant\twigperversion\twigextensions\String_Test']),
+			new \Twig_Test('array', null, ['node_class' => '\marionnewlevant\twigperversion\twigextensions\Array_Test']),
 		];
 	}
 

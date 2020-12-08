@@ -4,7 +4,7 @@ Making twig do things it really shouldn&#39;t. Twig is not intended to be a gene
 
 - `{% while %}`, `{% break %}`, `{% continue %}`, and `{% return %}` tags
 - `===`, `!==`, and `<=>` operators
-- `is numeric` and `is string` tests
+- `is numeric`, `is string`, and `is array` tests
 - `array_splice`, `string`, `float`, `int`, and `bool` filters
 
 ## Requirements
@@ -120,6 +120,18 @@ or
 {# Yes #}
 
 {{ 12 is string  ? 'Yes' : 'No' }}
+{# No #}
+{```
+
+- **Array**
+
+  Test whether given value is an array.
+  
+```Twig
+{ [] is array ? 'Yes' : 'No' }}
+{# Yes #}
+
+{{ '12' is array  ? 'Yes' : 'No' }}
 {# No #}
 ```
 
