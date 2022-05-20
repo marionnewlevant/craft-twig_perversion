@@ -13,12 +13,12 @@ use marionnewlevant\twigperversion\twigextensions\Continue_Node;
  * @link      https://github.com/marionnewlevant/craft-twig_perversion
  */
 
-class Continue_TokenParser extends \Twig_TokenParser
+class Continue_TokenParser extends \Twig\TokenParser\AbstractTokenParser
 {
 
-	public function parse(\Twig_Token $token)
+	public function parse(\Twig\Token $token)
 	{
-		$this->parser->getStream()->expect(\Twig_Token::BLOCK_END_TYPE);
+		$this->parser->getStream()->expect(\Twig\Token::BLOCK_END_TYPE);
 
 		return new Continue_Node(array(), array(), $token->getLine(), $this->getTag());
 	}

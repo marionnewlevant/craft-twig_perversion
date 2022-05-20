@@ -16,7 +16,7 @@ namespace marionnewlevant\twigperversion\twigextensions;
  * @package   TwigPerversion
  * @since     1.0.0
  */
-class TwigPerversionTwigExtension extends \Twig_Extension
+class TwigPerversionTwigExtension extends \Twig\Extension\AbstractExtension
 {
 	// Public Methods
 	// =========================================================================
@@ -44,16 +44,16 @@ class TwigPerversionTwigExtension extends \Twig_Extension
 	public function getTests()
 	{
 		return [
-			new \Twig_Test('numeric', null, ['node_class' => '\marionnewlevant\twigperversion\twigextensions\Numeric_Test']),
-			new \Twig_Test('string', null, ['node_class' => '\marionnewlevant\twigperversion\twigextensions\String_Test']),
-			new \Twig_Test('array', null, ['node_class' => '\marionnewlevant\twigperversion\twigextensions\Array_Test']),
+			new \Twig\TwigTest('numeric', null, ['node_class' => '\marionnewlevant\twigperversion\twigextensions\Numeric_Test']),
+			new \Twig\TwigTest('string', null, ['node_class' => '\marionnewlevant\twigperversion\twigextensions\String_Test']),
+			new \Twig\TwigTest('array', null, ['node_class' => '\marionnewlevant\twigperversion\twigextensions\Array_Test']),
 		];
 	}
 
 	public function getFilters()
 	{
 		return [
-			new \Twig_Filter('array_splice', function(array $input, int $offset, int $length = null, $replacement = null) {
+			new \Twig\TwigFilter('array_splice', function(array $input, int $offset, int $length = null, $replacement = null) {
 				if (is_null($length))
 				{
 					$length = count($input);
@@ -66,10 +66,10 @@ class TwigPerversionTwigExtension extends \Twig_Extension
 				return $input;
 			}),
 
-			new \Twig_SimpleFilter('string', [$this, 'string']),
-			new \Twig_SimpleFilter('float',  [$this, 'float']),
-			new \Twig_SimpleFilter('int',    [$this, 'int']),
-			new \Twig_SimpleFilter('bool',   [$this, 'bool']),
+			new \Twig\TwigFilter('string', [$this, 'string']),
+			new \Twig\TwigFilter('float',  [$this, 'float']),
+			new \Twig\TwigFilter('int',    [$this, 'int']),
+			new \Twig\TwigFilter('bool',   [$this, 'bool']),
 		];
 	}
 
@@ -81,17 +81,17 @@ class TwigPerversionTwigExtension extends \Twig_Extension
 				'===' => [
 					'precedence' => 20,
 					'class' => '\marionnewlevant\twigperversion\twigextensions\Expression_Binary_Equivalent',
-					'associativity' => \Twig_ExpressionParser::OPERATOR_LEFT,
+					'associativity' => \Twig\ExpressionParser::OPERATOR_LEFT,
 				],
 				'!==' => [
 					'precedence' => 20,
 					'class' => '\marionnewlevant\twigperversion\twigextensions\Expression_Binary_NotEquivalent',
-					'associativity' => \Twig_ExpressionParser::OPERATOR_LEFT,
+					'associativity' => \Twig\ExpressionParser::OPERATOR_LEFT,
 				],
 				'<=>' => [
 					'precedence' => 20,
 					'class' => '\marionnewlevant\twigperversion\twigextensions\Expression_Binary_Spaceship',
-					'associativity' => \Twig_ExpressionParser::OPERATOR_LEFT,
+					'associativity' => \Twig\ExpressionParser::OPERATOR_LEFT,
 				],
 			],
 		];

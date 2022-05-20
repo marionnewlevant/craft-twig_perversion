@@ -11,13 +11,13 @@ namespace marionnewlevant\twigperversion\twigextensions;
  * @link      https://github.com/marionnewlevant/craft-twig_perversion
  */
 
-class Return_Node extends \Twig_Node
+class Return_Node extends \Twig\Node\Node
 {
 
 	/**
 	* Compiles a Return_Node into PHP.
 	*/
-	public function compile(\Twig_Compiler $compiler)
+	public function compile(\Twig\Compiler $compiler)
 	{
 		$compiler
 			->addDebugInfo($this)

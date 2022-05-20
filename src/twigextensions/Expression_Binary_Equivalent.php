@@ -2,9 +2,9 @@
 
 namespace marionnewlevant\twigperversion\twigextensions;
 
-class Expression_Binary_Equivalent extends \Twig_Node_Expression_Binary
+class Expression_Binary_Equivalent extends \Twig\Node\Expression\Binary\AbstractBinary
 {
-    public function operator(\Twig_Compiler $compiler)
+    public function operator(\Twig\Compiler $compiler): \Twig\Compiler
     {
         return $compiler->raw('===');
     }

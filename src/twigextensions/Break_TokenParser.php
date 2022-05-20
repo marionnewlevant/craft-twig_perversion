@@ -13,12 +13,11 @@ use marionnewlevant\twigperversion\twigextensions\Break_Node;
  * @link      https://github.com/marionnewlevant/craft-twig_perversion
  */
 
-class Break_TokenParser extends \Twig_TokenParser
+class Break_TokenParser extends \Twig\TokenParser\AbstractTokenParser
 {
-
-	public function parse(\Twig_Token $token)
+	public function parse(\Twig\Token $token)
 	{
-		$this->parser->getStream()->expect(\Twig_Token::BLOCK_END_TYPE);
+		$this->parser->getStream()->expect(\Twig\Token::BLOCK_END_TYPE);
 
 		return new Break_Node(array(), array(), $token->getLine(), $this->getTag());
 	}

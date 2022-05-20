@@ -12,20 +12,20 @@ use marionnewlevant\twigperversion\twigextensions\Return_Node;
  * @link      https://github.com/marionnewlevant/craft-twig_perversion
  */
 
-class Return_TokenParser extends \Twig_TokenParser
+class Return_TokenParser extends \Twig\TokenParser\AbstractTokenParser
 {
 
-	public function parse(\Twig_Token $token)
+	public function parse(\Twig\Token $token)
 	{
 		$stream = $this->parser->getStream(); // entire stream of tokens
 		$nodes = array();
 
-		if (!$stream->test(\Twig_Token::BLOCK_END_TYPE))
+		if (!$stream->test(\Twig\Token::BLOCK_END_TYPE))
 		{
 			$nodes['expr'] = $this->parser->getExpressionParser()->parseExpression();
 		}
 
-		$stream->expect(\Twig_Token::BLOCK_END_TYPE);
+		$stream->expect(\Twig\Token::BLOCK_END_TYPE);
 
 		return new Return_Node($nodes, array(), $token->getLine(), $this->getTag());
 	}
