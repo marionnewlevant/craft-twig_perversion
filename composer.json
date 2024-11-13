@@ -23,7 +23,7 @@
   },
   "require": {
     "php": ">=8.2",
-    "craftcms/cms": "5.0 - 5.3"
+    "craftcms/cms": "5.0 - 4.13"
   },
   "autoload": {
     "psr-4": {
