@@ -28,7 +28,7 @@ class Plugin extends \craft\base\Plugin
             if ($markerPos !== false) {
                 $endPos = strpos($markup, ']', $markerPos);
                 $marker = substr($markup, $markerPos, $endPos - $markerPos + 1);
-                if (isset(self::$returnValues[$marker])) {
+                if (array_key_exists($marker, self::$returnValues)) {
                     return self::$returnValues[$marker];
                 }
             }
