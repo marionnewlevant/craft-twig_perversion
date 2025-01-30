@@ -2,6 +2,7 @@
 namespace marionnewlevant\twigperversion\twigextensions;
 
 use Twig\Environment;
+use Twig\Node\Expression\MacroReferenceExpression;
 use Twig\Node\Expression\MethodCallExpression;
 use Twig\Node\Node;
 use Twig\NodeVisitor\NodeVisitorInterface;
@@ -25,14 +26,22 @@ class Return_NodeVisitor implements NodeVisitorInterface
 
     public function leaveNode(Node $node, Environment $env): ?Node
     {
-        if ($node instanceof MethodCallExpression && !$node->getAttribute('is_defined_test')) {
-            return new MacroProcessor_Node([
-                'methodCallExpression' => $node,
-            ], [
-                'is_generator' => $node->hasAttribute('is_generator') ? $node->getAttribute('is_generator') : false,
-            ]);
+        if (class_exists(MacroReferenceExpression::class)) {
+            if (!$node instanceof MacroReferenceExpression) {
+                return $node;
+            }
+        } elseif (!$node instanceof MethodCallExpression) {
+            return $node;
         }
-        return $node;
+        if ($node->getAttribute('is_defined_test')) {
+            return $node;
+        }
+
+        return new MacroProcessor_Node([
+            'macroCallExpression' => $node,
+        ], [
+            'is_generator' => $node->hasAttribute('is_generator') ? $node->getAttribute('is_generator') : false,
+        ]);
     }
 
     public function getPriority()

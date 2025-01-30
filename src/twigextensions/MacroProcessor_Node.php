@@ -26,7 +26,7 @@ class MacroProcessor_Node extends AbstractExpression
             ->write(sprintf("%s::processMacroResponse(\n", Plugin::class))
             ->indent()
             ->write('')
-            ->subcompile($this->getNode('methodCallExpression'))
+            ->subcompile($this->getNode('macroCallExpression'))
             ->raw("\n")
             ->outdent()
             ->write(")\n")
